@@ -17,7 +17,8 @@ function draw() {
     
   repeller.setPower(mouseX);
   repeller.move(0.5);
-  
+
+//예제는 원래 3개였는데 한개로 줄임..
   emitter.addParticle();
   
   
