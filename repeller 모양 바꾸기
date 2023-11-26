@@ -16,11 +16,21 @@ class Repeller {
   }
 
   show() {
-    stroke(0);
-    strokeWeight(2);
-    fill(127);
-    circle(this.position.x, this.position.y, 32);
-  }
+  stroke(0);
+  strokeWeight(2);
+  fill(190);
+  
+
+  const size = 20; // Adjust the size as needed
+  const x = this.position.x;
+  const y = this.position.y - size / sqrt(3);
+  
+  beginShape();
+  vertex(x, y + size / sqrt(3));
+  vertex(x - size / 2, y - size / (2 * sqrt(3)));
+  vertex(x + size / 2, y - size / (2 * sqrt(3)));
+  endShape(CLOSE);
+}
 
   repel(particle) {
     //{!6 .code-wide} This is the same repel algorithm we used in Chapter 2: forces based on gravitational attraction.
