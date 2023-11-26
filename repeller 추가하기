@@ -30,8 +30,9 @@ function draw() {
   let gravity = createVector(0, 0.1);
   emitter.applyForce(gravity);
 
-
-  emitter.applyRepeller(repeller);
+for (let i = 0; i < repellers.length; i++) {
+    emitter.applyRepeller(repellers[i]);
+  }
   emitter.applyAttractor(att);
   emitter.run();
 
