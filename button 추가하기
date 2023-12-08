@@ -15,6 +15,17 @@ function setup() {
   att = new Attractor(20, height/2);
 }
 
+  // 버튼만들기.
+  let button = createButton('click me');
+  button.position(0, 100);
+
+  // 배경색바꾸는데쓰기.
+  button.mousePressed(() => {
+    let g = random(255);
+    background(g);
+  });
+}
+
 function draw() {
   background(255);
     
