@@ -6,6 +6,8 @@
 
 // A simple Particle class
 
+
+
 class Particle {
   constructor(x, y) {
     this.position = createVector(380, 150);
@@ -44,3 +46,4 @@ class Particle {
     return this.lifespan < 0.0;
   }
 }
+
