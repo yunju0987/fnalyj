@@ -1,6 +1,6 @@
 class Attractor {
   constructor(x, y) {
-    this.position = createVector(x, y);
+    this.position = createVector(x, constrain(y, 280, 400));
     //{!1} How strong is the repeller?
     this.power = 150;
   }
@@ -30,4 +30,3 @@ class Attractor {
     return force;
   }
 }
-
