@@ -13,7 +13,7 @@ function setup() {
   emitter = new Emitter(width / 2, height / 2);
   repeller = new Repeller(width / 2, 380);
   for (let i = 0; i < 5; i++) {
-    // 다섯 개의 어트랙터를 생성하여 배열에 추가
+    // 다섯 개의 어트랙터를 생성 -> 배열에 추가
     attractors.push(new Attractor(random(width), random(height)));
   }
   slider = createSlider(0, 255);
@@ -47,4 +47,3 @@ function draw() {
   repeller.show();
   
 }
-
