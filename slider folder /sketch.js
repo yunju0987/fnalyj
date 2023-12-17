@@ -2,7 +2,7 @@
 let emitter;
 // One repeller
 let repeller;
-let att;
+let attractors = [];
 
 let slider;
 
@@ -11,12 +11,14 @@ function setup() {
 
  
   emitter = new Emitter(width / 2, height / 2);
-  repeller = new Repeller(width / 2, 350);
-  att = new Attractor(20, height / 2);
-
+  repeller = new Repeller(width / 2, 380);
+  for (let i = 0; i < 5; i++) {
+    // 다섯 개의 어트랙터를 생성하여 배열에 추가
+    attractors.push(new Attractor(random(width), random(height)));
+  }
   slider = createSlider(0, 255);
   slider.position(10, 10);
-  slider.size(80);
+  slider.size(100);
 }
 
 function draw() {
@@ -36,9 +38,13 @@ function draw() {
   emitter.applyForce(gravity);
 
   emitter.applyRepeller(repeller);
-  emitter.applyAttractor(att);
+  for (let attractor of attractors) {
+    emitter.applyAttractor(attractor);
+    attractor.show();
+  }
   emitter.run();
 
   repeller.show();
-  att.show();
+  
 }
+
