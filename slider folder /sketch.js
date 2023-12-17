@@ -12,7 +12,7 @@ function setup() {
  
   emitter = new Emitter(width / 2, height / 2);
   repeller = new Repeller(width / 2, 380);
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 6; i++) {
     // 다섯 개의 어트랙터를 생성 -> 배열에 추가
     attractors.push(new Attractor(random(width), random(height)));
   }
@@ -24,8 +24,12 @@ function setup() {
 function draw() {
  
   let g = slider.value();
-  background(g);
+   background(187, 221, 247); // 하늘색 배경
 
+  // 바다 부분
+  fill(64, 120, 205); // 짙은 파란색
+  noStroke();
+  rect(0, 240, width, height / 2);
   repeller.setPower(mouseX);
 
   repeller.position.x = slider.value();
